@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pig Land</title>
+</head>
+<body>
+    <h1>My pigs info</h1>
+    <table id="pigInfo">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    </table>
+    
+    <button id="add">Add</button>
+    <button id="retreive" onclick=retreive()>Retreive</button>
+
+    <section id="addTb">
+        <p>Add:</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <input type="text" id="new-name">
+                </td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>
+                    <input type="number" id="new-height">
+                </td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td>
+                    <input type="number" id="new-weight">
+                </td>
+            </tr>
+            <tr>
+                <th>Personality</th>
+                <td>
+                    <input type="text" id="new-personality">
+                </td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>
+                    <select name="category" id="new-category">
+                        <option value="" selected="true" disabled="true">Please select</option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Grey">Grey</option>
+                        <option value="Chestnut">Chestnut</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Breed</th>
+                <td>
+                    <select name="breed" id="new-breed">
+                        <option value="" selected="true" disabled="true">Please select</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th id="specific-skill"></th>
+                <td>
+                    <input type="number" id="skillValue">
+                </td>
+            </tr>
+        </table>
+        <button id="submit">Submit</button>
+        
+    </section>
+
+    <section id="hidden-more">
+        
+    
+    </section>
+
+    <script src="./PigModel.js"></script> 
+    <script src="./PigController.js"></script>
+    <script src="./main.js"></script>
+
+    <script>    
+        function retreive() {
+            var bobj = JSON.parse(localStorage.bpigArray);
+            var wobj = JSON.parse(localStorage.wpigArray);
+            var gobj = JSON.parse(localStorage.gpigArray);
+            var cobj = JSON.parse(localStorage.cpigArray);
+            console.log(bobj);
+            console.log(wobj);
+            console.log(gobj);
+            console.log(cobj);
+
+        }
+    </script>
+   
+</body>
+</html>
